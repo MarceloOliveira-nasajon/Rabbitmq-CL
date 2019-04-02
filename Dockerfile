@@ -1,4 +1,4 @@
-FROM rabbitmq:3.6-management-alpine
+FROM rabbitmq:3.7-management
 
 ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.16.0-linux-amd64 /confd
 RUN chmod +x /confd
@@ -12,6 +12,7 @@ RUN chmod +x /dockerentry.sh
 VOLUME /data/confd
 VOLUME /opt/rancher/bin
 VOLUME /etc/rabbitmq
+
 
 ENTRYPOINT ["/dockerentry.sh"]
 
