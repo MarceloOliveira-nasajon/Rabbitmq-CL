@@ -1,6 +1,6 @@
 [template]
 src = "rabbitmq.tmpl"
-dest = "/etc/rabbitmq/rabbitmq.config"
+dest = "/etc/rabbitmq/rabbitmq.conf"
 keys = [
   "/self/service",
   "/containers",
