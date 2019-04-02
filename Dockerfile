@@ -7,6 +7,7 @@ ADD ./conf.d /etc/confd/conf.d
 ADD ./templates /etc/confd/templates
 ADD ./run.sh /run.sh
 ADD ./dockerentry.sh /dockerentry.sh
+RUN chmod +x /dockerentry.sh
 
 VOLUME /data/confd
 VOLUME /opt/rancher/bin
