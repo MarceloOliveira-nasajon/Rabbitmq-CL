@@ -14,4 +14,5 @@ VOLUME /opt/rancher/bin
 VOLUME /etc/rabbitmq
 
 ENTRYPOINT ["/dockerentry.sh"]
+RUN rabbitmq-server
 #CMD ["--backend", "rancher", "--prefix", "/2015-07-25"]
