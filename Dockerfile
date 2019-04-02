@@ -3,10 +3,6 @@ FROM rabbitmq:3.6-management-alpine
 ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.16.0-linux-amd64 /confd
 RUN chmod +x /confd
 
-RUN ["apk", "update"]
-RUN ["apk", "upgrade"]
-RUN ["apk", "add", "bash"]
-
 ADD ./conf.d /etc/confd/conf.d
 ADD ./templates /etc/confd/templates
 ADD ./run.sh /run.sh
@@ -16,6 +12,5 @@ VOLUME /data/confd
 VOLUME /opt/rancher/bin
 VOLUME /etc/rabbitmq
 
-RUN ["chmod", "+x", "/dockerentry.sh"]
 ENTRYPOINT ["/dockerentry.sh"]
 CMD ["--backend", "rancher", "--prefix", "/2015-07-25"]
